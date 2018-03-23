@@ -8,5 +8,6 @@ var driver = new Builder()
 driver.get('http://www.google.com/ncr')
     .then(_ =>
         driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN))
-    .then(_ => driver.wait(until.titleIs('webdriver - Google Search'), 1000))
+    .then(_ => driver.wait(until.titleIs('webdriver - Google Search'), 10000))
+    .then(_ => driver.sleep(10000))
     .then(_ => driver.quit());
